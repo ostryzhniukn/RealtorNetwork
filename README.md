@@ -18,5 +18,7 @@ Tech. side:
 - Hibernate/JPA
 - MongoDB | Spring Data MongoDB, Spring Data REST(or something else, will be considered soon)
 - Adroid app (Spring for Android)
+- Code coverage (obligatory)
+- CI (for testing and deployment)
 
 This list will be changing at least for a two weeks, it's just a first sketch!
