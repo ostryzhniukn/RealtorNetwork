@@ -12,5 +12,9 @@
 </head>
 <body>
     Hello!
+    <br/>
+    <a href="${pageContext.request.contextPath}/myController">myController</a>
+    <br/>
+    <a href="${pageContext.request.contextPath}/myJsp">myJsp</a>
 </body>
 </html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="60">
+    <Properties>
+        <Property name="logPath">logs</Property>
+        <Property name="defaultPattern">%level\t%d{MMM dd HH:mm:ss} %c{2}.%M: %m%n</Property>
+    </Properties>
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="${defaultPattern}"/>
+        </Console>
+        <RollingRandomAccessFile name="RollingRandomAccessFile" fileName="${logPath}/app.log"
+                                 filePattern="${logPath}/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <Pattern>${defaultPattern}</Pattern>
+            </PatternLayout>
+            <ThresholdFilter level="WARN" onMatch="ACCEPT" onMismatch="DENY"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+            <DefaultRolloverStrategy>
+                <Delete basePath="${logPath}" maxDepth="2">
+                    <IfAny>
+                        <IfLastModified age="60d"/>
+                        <IfAccumulatedFileSize exceeds="100 GB"/>
+                    </IfAny>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingRandomAccessFile>
+    </Appenders>
+    <Loggers>
+        <AsyncRoot level="INFO" includeLocation="true">
+            <!--includeLocation="true" - set to false to exclude location from log
+            and speed up logging a few times-->
+            <AppenderRef ref="STDOUT"/>
+        </AsyncRoot>
+    </Loggers>
+</Configuration>

@@ -8,9 +8,7 @@ import org.springframework.web.servlet.DispatcherServlet;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletRegistration;
 
-/**
- * Created by nazar on 6/10/15.
- */
+
 public class WebAppInitializer implements WebApplicationInitializer {
 
     @Override

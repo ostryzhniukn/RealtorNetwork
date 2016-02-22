@@ -9,9 +9,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-/**
- * Created by nazar on 6/10/15.
- */
+
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "ostryzhniukn.realtorNetwork")
