@@ -34,6 +34,7 @@
             <!--includeLocation="true" - set to false to exclude location from log
             and speed up logging a few times-->
             <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="RollingRandomAccessFile"/>
         </AsyncRoot>
     </Loggers>
 </Configuration>
